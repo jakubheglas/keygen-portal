@@ -1,5 +1,6 @@
 [build]
-  command = "pnpm install --frozen-lockfile && pnpm run build"
+  # ignore-scripts: wrangler/sharp postinstalls hang CI; Vite build does not need them
+  command = "pnpm install --frozen-lockfile --ignore-scripts && pnpm run build"
   publish = "dist"
 
 [build.environment]
